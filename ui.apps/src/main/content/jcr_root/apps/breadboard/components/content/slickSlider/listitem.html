@@ -1,0 +1,7 @@
+<template data-sly-template.default="${@ renderItem, item}">
+
+</template>
+
+<template data-sly-template.images="${@ renderItem, item}">
+    <img src="${item.item.path @ context='attribute'}"/>
+</template>

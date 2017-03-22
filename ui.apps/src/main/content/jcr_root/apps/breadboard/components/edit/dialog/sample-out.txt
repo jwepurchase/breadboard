@@ -1,0 +1,535 @@
+<html class="cq-dialog-page coral-App" lang="en" data-i18n-dictionary-src="/libs/cq/i18n/dict.{+locale}.json">
+<head>
+    <meta charset="utf-8">
+    <title>Slick Slider Properties</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="X-UA-Compatible" content="chrome=1"/>
+    <link rel="shortcut icon" href="/libs/granite/core/content/login/favicon.ico">
+
+    <link rel="stylesheet" href="/etc/clientlibs/granite/coralui2.css" type="text/css">
+    <link rel="stylesheet" href="/etc/clientlibs/granite/ui/quickactions.css" type="text/css">
+    <link rel="stylesheet" href="/libs/granite/ui/components/endor/clientlibs.css" type="text/css">
+    <link rel="stylesheet" href="/libs/granite/ui/components/foundation/clientlibs/foundation.css" type="text/css">
+    <link rel="stylesheet" href="/libs/cq/gui/components/common/tagspicker/clientlibs.css" type="text/css">
+    <link rel="stylesheet" href="/libs/cq/gui/components/authoring/dialog/sizefield/clientlibs/sizefield.css"
+          type="text/css">
+    <link rel="stylesheet" href="/etc/clientlibs/granite/coralui2/optional/rte.css" type="text/css">
+    <link rel="stylesheet" href="/libs/cq/gui/components/authoring/dialog/richtext/clientlibs/richtext.css"
+          type="text/css">
+    <link rel="stylesheet" href="/libs/cq/gui/components/authoring/dialog/image/clientlibs/image.css" type="text/css">
+    <link rel="stylesheet"
+          href="/libs/cq/gui/components/authoring/dialog/fileuploadfield/clientlibs/fileuploadfield.css"
+          type="text/css">
+    <link rel="stylesheet" href="/libs/cq/gui/components/authoring/dialog/clientlibs/dialog.css" type="text/css">
+    <script type="text/javascript" src="/etc/clientlibs/granite/jquery.js"></script>
+    <script type="text/javascript" src="/etc/clientlibs/granite/utils.js"></script>
+    <script type="text/javascript" src="/etc/clientlibs/granite/jquery/granite.js"></script>
+    <script type="text/javascript" src="/etc/clientlibs/granite/coralui2keys.js"></script>
+    <script type="text/javascript" src="/etc/clientlibs/granite/typekit.js"></script>
+    <script type="text/javascript" src="/etc/clientlibs/granite/moment.js"></script>
+    <script type="text/javascript" src="/etc/clientlibs/granite/coralui2.js"></script>
+    <script type="text/javascript" src="/etc/clientlibs/granite/uritemplate.js"></script>
+    <script type="text/javascript" src="/etc/clientlibs/granite/history.js"></script>
+    <script type="text/javascript" src="/etc/clientlibs/granite/jquery/animation.js"></script>
+    <script type="text/javascript" src="/etc/clientlibs/granite/ui/quickactions.js"></script>
+    <script type="text/javascript" src="/libs/granite/ui/components/endor/clientlibs.js"></script>
+    <script type="text/javascript" src="/libs/granite/ui/components/foundation/clientlibs/foundation.js"></script>
+    <script type="text/javascript" src="/libs/granite/ui/components/foundation/admin/clientlibs/admin.js"></script>
+    <script type="text/javascript" src="/libs/cq/experiencelog/components/loader/clientlibs.js"></script>
+    <script type="text/javascript" src="/libs/cq/gui/components/common/tagspicker/clientlibs.js"></script>
+    <script type="text/javascript" src="/etc/clientlibs/granite/handlebars.js"></script>
+    <script type="text/javascript" src="/etc/clientlibs/granite/coralui2/optional/rte.js"></script>
+    <script type="text/javascript"
+            src="/libs/cq/gui/components/authoring/dialog/richtext/clientlibs/richtext.js"></script>
+    <script type="text/javascript"
+            src="/libs/cq/gui/components/authoring/dialog/fileuploadfield/clientlibs/fileuploadfield.js"></script>
+    <script type="text/javascript"
+            src="/libs/cq/gui/components/authoring/dialog/dropdownshowhide/clientlibs/dropdownshowhide.js"></script>
+    <script type="text/javascript"
+            src="/libs/cq/gui/components/authoring/dialog/componentstyles/clientlibs/componentstyles.js"></script>
+    <script type="text/javascript" src="/libs/cq/gui/components/authoring/dialog/clientlibs/dialog.js"></script>
+    <script type="text/javascript" src="/apps/breadboard/components/content/slickSlider/authClientlib.js"></script>
+
+
+</head>
+<body class="coral--light">
+<form action='/content/breadboard/en/home/_jcr_content/hero' method='post'
+      class='coral-Form coral-Form--vertical coral-Text cq-dialog cq-dialog-fullscreen foundation-form content foundation-layout-form'
+      data-cq-dialog-pageeditor='/editor.html/content/breadboard/en/home.html' data-foundation-form-ajax='true'>
+    <input type="hidden" name="_charset_" value="utf-8"/>
+
+    <input type="hidden" name="./sling:resourceType" value="breadboard/components/content/slickSlider"/>
+
+    <input type="hidden" name="./jcr:lastModified"/>
+    <input type="hidden" name="./jcr:lastModifiedBy"/>
+    <nav class="cq-dialog-header coral--dark u-coral-clearFix">
+        <h2 class="coral-Heading coral-Heading--2 u-coral-pullLeft">Slick Slider Properties</h2>
+        <div class="cq-dialog-actions u-coral-pullRight">
+            <button type='button' class='coral-MinimalButton cq-dialog-header-action cq-dialog-help'
+                    data-href='https://www.adobe.com/go/aem6_1_docs' title='Help'>
+                <i class="coral-Icon coral-Icon--helpCircle"></i>
+            </button>
+            <button type="button" class="coral-MinimalButton cq-dialog-header-action cq-dialog-cancel" title="Cancel">
+                <i class="coral-Icon coral-Icon--close"></i>
+            </button>
+            <button class="coral-MinimalButton cq-dialog-header-action cq-dialog-submit" title="Done">
+                <i class="coral-Icon coral-Icon--check"></i>
+            </button>
+        </div>
+    </nav>
+    <div class='cq-dialog-content coral-TabPanel coral-TabPanel--large' data-init='tabs'>
+        <nav class="coral-TabPanel-navigation"><a class='coral-TabPanel-tab is-active' href='#'
+                                                  data-toggle='tab'>Slides</a><a class='coral-TabPanel-tab' href='#'
+                                                                                 data-toggle='tab'>Accessibility</a><a
+                class='coral-TabPanel-tab' href='#' data-toggle='tab'>Basic</a><a class='coral-TabPanel-tab' href='#'
+                                                                                  data-toggle='tab'>Controls</a><a
+                class='coral-TabPanel-tab' href='#' data-toggle='tab'>Effects</a></nav>
+        <div class="coral-TabPanel-content">
+            <section class='coral-TabPanel-pane is-active coral-FixedColumn'>
+                <div class='coral-FixedColumn-column'>
+                    <div class='coral-Form-fieldwrapper'><label class="coral-Form-fieldlabel">Build list
+                        using</label><span class='coral-Form-field cq-dialog-dropdown-showhide coral-Select'
+                                           data-collision='none' data-init='select'
+                                           data-cq-dialog-dropdown-showhide-target='.list-option-listfrom-showhide-target'>
+    <button type='button' class='coral-Select-button coral-MinimalButton'>
+        <span class="coral-Select-button-text"></span>
+    </button>
+    <select name='./listFrom' class='coral-Select-select'><option value='children'>Child pages</option>
+<option value='static' selected='selected'>Fixed list</option>
+<option value='search'>Search</option>
+<option value='querybuilder'>Advanced Search</option>
+<option value='tags'>Tags</option>
+</select>
+
+    <ul class="coral-SelectList"></ul>
+</span></div>
+                    <div class='hide list-option-listfrom-showhide-target foundation-layout-util-vmargin'
+                         data-showhidetargetvalue='children'>
+                        <h4 class='coral-Heading coral-Heading--4'>Options for Child Pages</h4>
+                        <div class='coral-Well'>
+                            <div class='coral-Form-fieldwrapper'><label class="coral-Form-fieldlabel">Parent
+                                page</label><span class='coral-Form-field coral-PathBrowser' data-init='pathbrowser'
+                                                  data-root-path='/content'
+                                                  data-option-loader='granite.ui.pathBrowser.pages.hierarchyNotFile'
+                                                  data-picker-src='/libs/wcm/core/content/common/pathbrowser/column.html/content?predicate=hierarchyNotFile'
+                                                  data-crumb-root='Content Root' data-picker-multiselect='false'><span
+                                    class="coral-InputGroup coral-InputGroup--block"><input
+                                    class='coral-InputGroup-input coral-Textfield js-coral-pathbrowser-input'
+                                    type='text' name='./parentPage' autocomplete='off' value=''><span
+                                    class="coral-InputGroup-button"><button
+                                    class="coral-Button coral-Button--square js-coral-pathbrowser-button" type="button"
+                                    title="Browse"><i class="coral-Icon coral-Icon--sizeS coral-Icon--folderSearch"></i></button></span></span></span><span
+                                    class="coral-Form-fieldinfo coral-Icon coral-Icon--infoCircle coral-Icon--sizeS"
+                                    data-init="quicktip" data-quicktip-type="info" data-quicktip-arrow="right"
+                                    data-quicktip-content="Leave empty to use current page"></span></div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class='hide list-option-listfrom-showhide-target foundation-layout-util-vmargin'
+                         data-showhidetargetvalue='descendants'>
+                        <h4 class='coral-Heading coral-Heading--4'>Options for Descendant Pages</h4>
+                        <div class='coral-Well'>
+                            <div class='coral-Form-fieldwrapper'><label class="coral-Form-fieldlabel">Descendants
+                                of</label><span class='coral-Form-field coral-PathBrowser' data-init='pathbrowser'
+                                                data-root-path='/content'
+                                                data-option-loader='granite.ui.pathBrowser.pages.hierarchyNotFile'
+                                                data-picker-src='/libs/wcm/core/content/common/pathbrowser/column.html/content?predicate=hierarchyNotFile'
+                                                data-crumb-root='Content Root' data-picker-multiselect='false'><span
+                                    class="coral-InputGroup coral-InputGroup--block"><input
+                                    class='coral-InputGroup-input coral-Textfield js-coral-pathbrowser-input'
+                                    type='text' name='./ancestorPage' autocomplete='off' value=''><span
+                                    class="coral-InputGroup-button"><button
+                                    class="coral-Button coral-Button--square js-coral-pathbrowser-button" type="button"
+                                    title="Browse"><i class="coral-Icon coral-Icon--sizeS coral-Icon--folderSearch"></i></button></span></span></span><span
+                                    class="coral-Form-fieldinfo coral-Icon coral-Icon--infoCircle coral-Icon--sizeS"
+                                    data-init="quicktip" data-quicktip-type="info" data-quicktip-arrow="right"
+                                    data-quicktip-content="Leave empty to use current page"></span></div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class='hide list-option-listfrom-showhide-target foundation-layout-util-vmargin'
+                         data-showhidetargetvalue='static'>
+                        <h4 class='coral-Heading coral-Heading--4'>Options for Fixed list</h4>
+                        <div class='coral-Well'>
+                            <div class='coral-Form-fieldwrapper'>
+                                <div class='coral-Form-field foundation-layout-util-maximized-alt coral-Multifield'
+                                     data-init='multifield'><input type='hidden' name='./pages@Delete'>
+                                    <ol class="coral-Multifield-list js-coral-Multifield-list">
+                                        <li class="coral-Multifield-input js-coral-Multifield-input"><span
+                                                class='coral-PathBrowser' data-init='pathbrowser'
+                                                data-root-path='/content'
+                                                data-option-loader='granite.ui.pathBrowser.pages.hierarchyNotFile'
+                                                data-picker-src='/libs/wcm/core/content/common/pathbrowser/column.html/content?predicate=hierarchyNotFile'
+                                                data-crumb-root='Content Root' data-picker-multiselect='false'><span
+                                                class="coral-InputGroup coral-InputGroup--block"><input
+                                                class='coral-InputGroup-input coral-Textfield js-coral-pathbrowser-input'
+                                                type='text' name='./pages' autocomplete='off'
+                                                value='/content/dam/geometrixx-outdoors/activities/hiking/PDP_2_c15.jpg'><span
+                                                class="coral-InputGroup-button"><button
+                                                class="coral-Button coral-Button--square js-coral-pathbrowser-button"
+                                                type="button" title="Browse"><i
+                                                class="coral-Icon coral-Icon--sizeS coral-Icon--folderSearch"></i></button></span></span></span>
+                                        </li>
+                                    </ol>
+                                    <script class="js-coral-Multifield-input-template" type="text/html">
+                                        <span class='coral-PathBrowser' data-init='pathbrowser'
+                                              data-root-path='/content'
+                                              data-option-loader='granite.ui.pathBrowser.pages.hierarchyNotFile'
+                                              data-picker-src='/libs/wcm/core/content/common/pathbrowser/column.html/content?predicate=hierarchyNotFile'
+                                              data-crumb-root='Content Root' data-picker-multiselect='false'>
+                                    <span class="coral-InputGroup coral-InputGroup--block"><input
+                                            class='coral-InputGroup-input coral-Textfield js-coral-pathbrowser-input'
+                                            type='text' name='./pages' autocomplete='off' value=''><span
+                                            class="coral-InputGroup-button"><button
+                                            class="coral-Button coral-Button--square js-coral-pathbrowser-button"
+                                            type="button" title="Browse"><i
+                                            class="coral-Icon coral-Icon--sizeS coral-Icon--folderSearch"></i></button></span></span></span>
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class='hide list-option-listfrom-showhide-target foundation-layout-util-vmargin'
+                         data-showhidetargetvalue='search'>
+                        <h4 class='coral-Heading coral-Heading--4'>Options for Search</h4>
+                        <div class='coral-Well'>
+                            <div class='coral-Form-fieldwrapper'><label class="coral-Form-fieldlabel">Search
+                                in</label><span class='coral-Form-field coral-PathBrowser' data-init='pathbrowser'
+                                                data-root-path='/content'
+                                                data-option-loader='granite.ui.pathBrowser.pages.hierarchyNotFile'
+                                                data-picker-src='/libs/wcm/core/content/common/pathbrowser/column.html/content?predicate=hierarchyNotFile'
+                                                data-crumb-root='Content Root' data-picker-multiselect='false'><span
+                                    class="coral-InputGroup coral-InputGroup--block"><input
+                                    class='coral-InputGroup-input coral-Textfield js-coral-pathbrowser-input'
+                                    type='text' name='./searchIn' autocomplete='off' value=''><span
+                                    class="coral-InputGroup-button"><button
+                                    class="coral-Button coral-Button--square js-coral-pathbrowser-button" type="button"
+                                    title="Browse"><i class="coral-Icon coral-Icon--sizeS coral-Icon--folderSearch"></i></button></span></span></span><span
+                                    class="coral-Form-fieldinfo coral-Icon coral-Icon--infoCircle coral-Icon--sizeS"
+                                    data-init="quicktip" data-quicktip-type="info" data-quicktip-arrow="right"
+                                    data-quicktip-content="Leave empty to use current site (eg. /content/mysite)"></span>
+                            </div>
+                            <div class='coral-Form-fieldwrapper'><label class="coral-Form-fieldlabel">Search
+                                query</label><input class='coral-Form-field coral-Textfield' type='text' name='./query'
+                                                    value=''/></div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class='hide list-option-listfrom-showhide-target foundation-layout-util-vmargin'
+                         data-showhidetargetvalue='querybuilder'>
+                        <h4 class='coral-Heading coral-Heading--4'>Options for Advanced search</h4>
+                        <div class='coral-Well'>
+                            <div class='coral-Form-fieldwrapper'><label class="coral-Form-fieldlabel">Querybuilder
+                                predicate notation</label><textarea
+                                    class='coral-Form-field foundation-layout-util-maximized-alt resizable-none coral-Textfield coral-Textfield--multiline'
+                                    name='./savedquery' rows='5'></textarea></div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class='hide list-option-listfrom-showhide-target foundation-layout-util-vmargin'
+                         data-showhidetargetvalue='tags'>
+                        <h4 class='coral-Heading coral-Heading--4'>Options for Tags</h4>
+                        <div class='coral-Well'>
+                            <div class='coral-Form-fieldwrapper'><label class="coral-Form-fieldlabel">Parent
+                                page</label><span class='coral-Form-field coral-PathBrowser' data-init='pathbrowser'
+                                                  data-root-path='/content'
+                                                  data-option-loader='granite.ui.pathBrowser.pages.hierarchyNotFile'
+                                                  data-picker-src='/libs/wcm/core/content/common/pathbrowser/column.html/content?predicate=hierarchyNotFile'
+                                                  data-crumb-root='Content Root' data-picker-multiselect='false'><span
+                                    class="coral-InputGroup coral-InputGroup--block"><input
+                                    class='coral-InputGroup-input coral-Textfield js-coral-pathbrowser-input'
+                                    type='text' name='./tagsSearchRoot' autocomplete='off' value=''><span
+                                    class="coral-InputGroup-button"><button
+                                    class="coral-Button coral-Button--square js-coral-pathbrowser-button" type="button"
+                                    title="Browse"><i class="coral-Icon coral-Icon--sizeS coral-Icon--folderSearch"></i></button></span></span></span><span
+                                    class="coral-Form-fieldinfo coral-Icon coral-Icon--infoCircle coral-Icon--sizeS"
+                                    data-init="quicktip" data-quicktip-type="info" data-quicktip-arrow="right"
+                                    data-quicktip-content="Leave empty to use current page"></span></div>
+                            <div class='coral-Form-fieldwrapper'><label class="coral-Form-fieldlabel">Tags</label><span
+                                    class='coral-Form-field coral-Form-field js-cq-TagsPickerField coral-PathBrowser'
+                                    data-basepath='/etc/tags /etc/tags' data-property-path='./tags' data-group=''
+                                    data-browserPath='/mnt/override/apps/breadboard/components/content/slickSlider/cq%3adialog/content/items/settings/items/column/items/setTags/items/well/items/tags'
+                                    data-init='pathbrowser' data-root-path='/etc/tags'
+                                    data-option-loader='cq.tagbrowser.optionloader'
+                                    data-option-value-reader='cq.tagbrowser.optionValueReader'
+                                    data-option-title-reader='cq.tagbrowser.optionTitleReader'
+                                    data-option-renderer='cq.tagbrowser.optionRenderer'
+                                    data-autocomplete-callback='cq.tagbrowser.autocompleteCallback'
+                                    data-picker-src='/libs/wcm/core/content/common/tagbrowser/tagbrowsercolumn.html/etc/tags'
+                                    data-picker-title='Select Tags' data-crumb-root='Tags'
+                                    data-picker-multiselect='true'
+                                    data-autocompleteCallback='cq.tagbrowser.autocompleteCallback'
+                                    data-pickerMultiselect='true' data-allowBulkEdit='true'
+                                    data-pickerSrc='/libs/wcm/core/content/common/tagbrowser/tagbrowsercolumn.html/etc/tags'
+                                    data-pickerTitle='Select Tags'><span
+                                    class="coral-InputGroup coral-InputGroup--block"><input
+                                    class='coral-InputGroup-input coral-Textfield js-coral-pathbrowser-input'
+                                    type='text' autocomplete='off' value=''><span class="coral-InputGroup-button"><button
+                                    class="coral-Button coral-Button--square js-coral-pathbrowser-button" type="button"
+                                    title="Browse"><i
+                                    class="coral-Icon coral-Icon--sizeS coral-Icon--tags"></i></button></span></span></span>
+                                <ul class='coral-TagList js-TagsPickerField-tagList' data-fieldname='./tags'
+                                    data-init='taglist'></ul>
+                                <input type='hidden' name='./tags@TypeHint' value='String[]'><input type='hidden'
+                                                                                                    name='./tags@Delete'>
+                            </div>
+                            <div class='coral-Form-fieldwrapper'><label class="coral-Form-fieldlabel">Match</label><span
+                                    class='coral-Form-field coral-Select' data-collision='none' data-init='select'>
+    <button type='button' class='coral-Select-button coral-MinimalButton'>
+        <span class="coral-Select-button-text"></span>
+    </button>
+    <select name='./tagsMatch' class='coral-Select-select'><option value='any' selected='selected'>any tag</option>
+<option value='all'>all tags</option>
+</select>
+
+    <ul class="coral-SelectList"></ul>
+</span></div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class='coral-Form-fieldwrapper'><label class="coral-Form-fieldlabel">Display as</label><span
+                            class='coral-Form-field coral-Select' data-collision='none' data-init='select'>
+    <button type='button' class='coral-Select-button coral-MinimalButton'>
+        <span class="coral-Select-button-text"></span>
+    </button>
+    <select name='./displayAs' class='coral-Select-select'><option value='default'>Pages</option>
+<option value='images' selected='selected'>Images</option>
+</select>
+
+    <ul class="coral-SelectList"></ul>
+</span></div>
+                    <div class='coral-Form-fieldwrapper'><label class="coral-Form-fieldlabel">Order by</label><span
+                            class='coral-Form-field coral-Select' data-collision='none' data-init='select'
+                            data-type='editable'>
+    <button type='button' class='coral-Select-button coral-MinimalButton'>
+        <span class="coral-Select-button-text"></span>
+    </button>
+    <select name='./orderBy' class='coral-Select-select'><option value='jcr:title' data-required='true'
+                                                                 selected='selected'>jcr:title</option>
+<option value='jcr:created'>jcr:created</option>
+<option value='cq:lastModified'>cq:lastModified</option>
+<option value='cq:template'>cq:template</option>
+</select>
+
+    <ul class="coral-SelectList"></ul>
+</span><span class="coral-Form-fieldinfo coral-Icon coral-Icon--infoCircle coral-Icon--sizeS" data-init="quicktip"
+             data-quicktip-type="info" data-quicktip-arrow="right"
+             data-quicktip-content="Enter a property like &amp;#39;jcr:created&amp;#39;"></span></div>
+                    <input type='hidden' name='./feedEnabled' value='true' data-text='Enable Feed'/><input type='hidden'
+                                                                                                           name='./feedEnabled@Delete'
+                                                                                                           value='true'/><input
+                        type='hidden' name='./feedEnabled@TypeHint' value='Boolean'/></div>
+
+
+            </section>
+
+
+            <section class='coral-TabPanel-pane coral-FixedColumn'>
+                <div class='coral-FixedColumn-column'>
+                    <div class='coral-Form-fieldwrapper'><label class="coral-Form-fieldlabel">Description for &#34;Previous&#34;</label><input
+                            class='coral-Form-field coral-Textfield' type='text' name='./accessiblePrevious'
+                            value=''/><span
+                            class="coral-Form-fieldinfo coral-Icon coral-Icon--infoCircle coral-Icon--sizeS"
+                            data-init="quicktip" data-quicktip-type="info" data-quicktip-arrow="right"
+                            data-quicktip-content="To improve accessibility describe the context of &amp;#34;Previous&amp;#34; e.g. which list it belongs to."></span>
+                    </div>
+                    <div class='coral-Form-fieldwrapper'><label class="coral-Form-fieldlabel">Description for &#34;Next&#34;</label><input
+                            class='coral-Form-field coral-Textfield' type='text' name='./accessibleNext' value=''/><span
+                            class="coral-Form-fieldinfo coral-Icon coral-Icon--infoCircle coral-Icon--sizeS"
+                            data-init="quicktip" data-quicktip-type="info" data-quicktip-arrow="right"
+                            data-quicktip-content="To improve accessibility describe the context of &amp;#34;Next&amp;#34; e.g. which list it belongs to."></span>
+                    </div>
+                </div>
+
+
+                <div class="coral-Form-fieldwrapper coral-Form-fieldwrapper--singleline"><label
+                        class='coral-Checkbox coral-Form-field'>
+                    <input class='coral-FixedColumn-column coral-Checkbox-input' type='checkbox' name='./accessibility'
+                           value='true'/>
+                    <span class="coral-Checkbox-checkmark"></span>
+                    <span class="coral-Checkbox-description">Keyboard Navigation</span><input type='hidden'
+                                                                                              name='./accessibility@Delete'></label>
+                </div>
+                <input class='coral-FixedColumn-column' type='hidden' name='./accessibility@TypeHint' value='Boolean'/>
+            </section>
+
+
+            <section class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin'>
+                <div class='coral-FixedColumn-column'>
+                    <div class='coral-Form-fieldwrapper'><label class="coral-Form-fieldlabel">Slides to Show</label>
+                        <div class='coral-Form-field field-slidesToShow coral-InputGroup' data-init='numberinput'
+                             data-default-value='1'>
+    <span class="coral-InputGroup-button">
+        <button class="js-coral-NumberInput-decrementButton coral-Button coral-Button--square" type="button"
+                title="Decrement">
+            <i class="coral-Icon coral-Icon--sizeXS coral-Icon--minus"></i>
+        </button>
+    </span>
+                            <input type='text' name='./slidesToShow' value='1'
+                                   class='js-coral-NumberInput-input coral-InputGroup-input coral-Textfield'>
+                            <span class="coral-InputGroup-button">
+        <button class="js-coral-NumberInput-incrementButton coral-Button coral-Button--square" type="button"
+                title="Increment">
+            <i class="coral-Icon coral-Icon--sizeXS coral-Icon--add"></i>
+        </button>
+    </span>
+                        </div>
+                    </div>
+                    <div class='coral-Form-fieldwrapper'><label class="coral-Form-fieldlabel">Slides to Scroll</label>
+                        <div class='coral-Form-field field-slidesToScroll coral-InputGroup' data-init='numberinput'
+                             data-default-value='1'>
+    <span class="coral-InputGroup-button">
+        <button class="js-coral-NumberInput-decrementButton coral-Button coral-Button--square" type="button"
+                title="Decrement">
+            <i class="coral-Icon coral-Icon--sizeXS coral-Icon--minus"></i>
+        </button>
+    </span>
+                            <input type='text' name='./slidesToScroll' value='1'
+                                   class='js-coral-NumberInput-input coral-InputGroup-input coral-Textfield'>
+                            <span class="coral-InputGroup-button">
+        <button class="js-coral-NumberInput-incrementButton coral-Button coral-Button--square" type="button"
+                title="Increment">
+            <i class="coral-Icon coral-Icon--sizeXS coral-Icon--add"></i>
+        </button>
+    </span>
+                        </div>
+                    </div>
+                    <div class="coral-Form-fieldwrapper coral-Form-fieldwrapper--singleline"><label
+                            class='coral-Checkbox coral-Form-field'>
+                        <input type='checkbox' name='./autoplay' value='true' class='coral-Checkbox-input'/>
+                        <span class="coral-Checkbox-checkmark"></span>
+                        <span class="coral-Checkbox-description">Autoplay</span><input type='hidden'
+                                                                                       name='./autoplay@Delete'></label>
+                    </div>
+                    <input type='hidden' name='./autoplay@TypeHint' value='Boolean'/>
+                    <div class='coral-Form-fieldwrapper'><label class="coral-Form-fieldlabel">Play speed (ms)</label>
+                        <div class='coral-Form-field field-autoplaySpeed coral-InputGroup' data-init='numberinput'
+                             data-default-value='3000'>
+    <span class="coral-InputGroup-button">
+        <button class="js-coral-NumberInput-decrementButton coral-Button coral-Button--square" type="button"
+                title="Decrement">
+            <i class="coral-Icon coral-Icon--sizeXS coral-Icon--minus"></i>
+        </button>
+    </span>
+                            <input type='text' name='./autoplaySpeed' value='3000'
+                                   class='js-coral-NumberInput-input coral-InputGroup-input coral-Textfield'>
+                            <span class="coral-InputGroup-button">
+        <button class="js-coral-NumberInput-incrementButton coral-Button coral-Button--square" type="button"
+                title="Increment">
+            <i class="coral-Icon coral-Icon--sizeXS coral-Icon--add"></i>
+        </button>
+    </span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+
+
+            <section class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin'>
+                <div class='coral-FixedColumn-column'>
+                    <div class="coral-Form-fieldwrapper coral-Form-fieldwrapper--singleline"><label
+                            class='coral-Checkbox coral-Form-field'>
+                        <input type='checkbox' name='./arrows' value='true' class='coral-Checkbox-input'/>
+                        <span class="coral-Checkbox-checkmark"></span>
+                        <span class="coral-Checkbox-description">Arrows</span><input type='hidden'
+                                                                                     name='./arrows@Delete'></label>
+                    </div>
+                    <input type='hidden' name='./arrows@TypeHint' value='Boolean'/>
+                    <div class="coral-Form-fieldwrapper coral-Form-fieldwrapper--singleline"><label
+                            class='coral-Checkbox coral-Form-field'>
+                        <input type='checkbox' name='./dots' value='true' class='coral-Checkbox-input'/>
+                        <span class="coral-Checkbox-checkmark"></span>
+                        <span class="coral-Checkbox-description">Indicator Dots</span><input type='hidden'
+                                                                                             name='./dots@Delete'></label>
+                    </div>
+                    <input type='hidden' name='./dots@TypeHint' value='Boolean'/>
+                    <div class='coral-Form-fieldwrapper'><label class="coral-Form-fieldlabel">Dots css
+                        class</label><input class='coral-Form-field coral-Textfield' type='text' name='./dotsClass'
+                                            value=''/></div>
+                    <div class="coral-Form-fieldwrapper coral-Form-fieldwrapper--singleline"><label
+                            class='coral-Checkbox coral-Form-field'>
+                        <input type='checkbox' name='./draggable' value='true' class='coral-Checkbox-input'
+                               data-defaultValue='true'/>
+                        <span class="coral-Checkbox-checkmark"></span>
+                        <span class="coral-Checkbox-description">Draggable</span><input type='hidden'
+                                                                                        name='./draggable@Delete'></label>
+                    </div>
+                    <input type='hidden' name='./draggable@TypeHint' value='Boolean'/>
+                    <div class="coral-Form-fieldwrapper coral-Form-fieldwrapper--singleline"><label
+                            class='coral-Checkbox coral-Form-field'>
+                        <input type='checkbox' name='./rtl' value='false' class='coral-Checkbox-input'
+                               data-defaultValue='false'/>
+                        <span class="coral-Checkbox-checkmark"></span>
+                        <span class="coral-Checkbox-description">Right-to-Left</span><input type='hidden'
+                                                                                            name='./rtl@Delete'></label>
+                    </div>
+                    <input type='hidden' name='./rtl@TypeHint' value='Boolean'/></div>
+
+
+            </section>
+
+
+            <section class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin'>
+                <div class='coral-FixedColumn-column'>
+                    <div class="coral-Form-fieldwrapper coral-Form-fieldwrapper--singleline"><label
+                            class='coral-Checkbox coral-Form-field'>
+                        <input type='checkbox' name='./fade' value='true' class='coral-Checkbox-input'/>
+                        <span class="coral-Checkbox-checkmark"></span>
+                        <span class="coral-Checkbox-description">Fade</span><input type='hidden'
+                                                                                   name='./fade@Delete'></label></div>
+                    <input type='hidden' name='./fade@TypeHint' value='Boolean'/>
+                    <div class='coral-Form-fieldwrapper'><span
+                            class='coral-Form-field cq-dialog-dropdown-showhide coral-Select' data-collision='none'
+                            data-init='select'
+                            data-cq-dialog-dropdown-showhide-target='.list-option-listfrom-showhide-target'>
+    <button type='button' class='coral-Select-button coral-MinimalButton'>
+        <span class="coral-Select-button-text"></span>
+    </button>
+    <select name='./easing' class='coral-Select-select'><option value='linear' selected='selected'>Linear</option>
+<option value='swing'>Swing</option>
+<option value='_default'>None</option>
+</select>
+
+    <ul class="coral-SelectList"></ul>
+</span></div>
+                    <div class="coral-Form-fieldwrapper coral-Form-fieldwrapper--singleline"><label
+                            class='coral-Checkbox coral-Form-field'>
+                        <input type='checkbox' name='./centerMode' value='true' class='coral-Checkbox-input'/>
+                        <span class="coral-Checkbox-checkmark"></span>
+                        <span class="coral-Checkbox-description">Center Mode</span><input type='hidden'
+                                                                                          name='./centerMode@Delete'></label>
+                    </div>
+                    <input type='hidden' name='./centerMode@TypeHint' value='Boolean'/></div>
+
+
+            </section>
+
+
+        </div>
+    </div>
+
+
+</form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<div id="${sliderId @ context='attribute'}" class="breadboard_slickSlider"
+     data-sly-use.listComponent="slickSlider.js"
+     data-sly-use.itemTemplate="listitem.html"
+     id="${listComponent.listId}">
+
+    <div data-sly-test="${wcmmode.edit && listComponent.isEmpty && listComponent.isTouch}" class="cq-placeholder"
+         data-emptytext="Slick Slider">
+    </div>
+
+    <sly data-sly-list="${listComponent.list}">
+        <sly data-sly-call="${itemTemplate[listComponent.type] @ renderItem=itemList, item=item}"></sly>
+    </sly>
+</div>
+
+<script type="text/javascript"
+        data-sly-use.sliderConfig="init.js"
+        data-sly-test="${!listComponent.isEmpty}">
+    $(document).ready(function () {
+        $("#${listComponent.listId @ context='scriptString'}").slick(
+            ${sliderConfig @ context='unsafe'}
+        );
+    });
+</script>
