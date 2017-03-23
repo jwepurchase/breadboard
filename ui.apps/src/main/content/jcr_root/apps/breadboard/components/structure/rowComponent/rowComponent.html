@@ -1,14 +1,10 @@
-<div data-sly-test="${wcmmode.edit && listComponent.isEmpty && listComponent.isTouch}" class="cq-placeholder"
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder"
      data-emptytext="Foundation Row">
 </div>
-<sly data-sly-test="${wcmmode.edit}" data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
-     data-sly-call="${clientlib.all @categories='breadboard.row.editor'}"/>
-
-</sly>
 <div class="row" data-sly-list="${resource.listChildren}">
     <sly data-sly-test.colProps="${item.getValueMap}"/>
     <sly data-sly-test.colOffsetX="${colProps.offset}">
-        <sly data-sly-test.colOffset="${colProps.size}-offset-${colProps.offset}"/>
+        <sly data-sly-test.colOffset="${colProps.mediaSize}-offset-${colProps.offset}"/>
     </sly>
     <div class="columns ${colProps.mediaSize}-${colProps.width} ${colOffset}">
         <sly data-sly-test.parPath="${item.path}/par"/>

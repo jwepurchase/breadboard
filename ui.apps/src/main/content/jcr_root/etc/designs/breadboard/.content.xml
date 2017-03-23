@@ -9,7 +9,7 @@
             <rows
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/foundation/components/parsys"
-                components="[group:breadboard]">
+                components="[/apps/breadboard/components/structure/rowComponent]">
             </rows>
             <logo
                 jcr:primaryType="nt:unstructured"
@@ -22,7 +22,7 @@
             <rows
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/foundation/components/parsys"
-                    components="[group:breadboard]">
+                    components="[/apps/breadboard/components/structure/rowComponent]">
             </rows>
             <logo
                     jcr:primaryType="nt:unstructured"

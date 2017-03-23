@@ -3,5 +3,62 @@
           xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
           jcr:primaryType="nt:unstructured"
           jcr:title="Foundation Row Properties"
-          sling:resourceType="breadboard/components/structure/rowComponent/dialog">
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured"
+             sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <rowcols
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/multifield"
+                            class="full-width"
+                            eaem-nested="test this"
+                            fieldDescription="Click '+' to add a new column"
+                            fieldLabel="Columns">
+                        <field
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                name="."><!-- add a path if you want another node between children -->
+                            <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                    method="absolute"/>
+                            <items jcr:primaryType="nt:unstructured">
+                                <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <width
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                fieldDescription="Enter Width"
+                                                fieldLabel="Width"
+                                                name="./width"/>
+                                        <mediaSize
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                fieldDescription="Enter Media Size"
+                                                fieldLabel="Media Size"
+                                                name="./mediaSize"/>
+                                        <offset
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                fieldDescription="Enter Offset"
+                                                fieldLabel="Offset"
+                                                name="./offset"/>
+                                    </items>
+                                </column>
+                            </items>
+                        </field>
+                    </rowcols>
+                </items>
+            </column>
+        </items>
+    </content>
 </jcr:root>
