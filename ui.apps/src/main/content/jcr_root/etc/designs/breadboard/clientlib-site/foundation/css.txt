@@ -1,0 +1,6 @@
+#base=.
+
+6_3_1/css/app.css
+6_3_1/css/foundation.css
+
+foundation-icons/foundation-icons.css

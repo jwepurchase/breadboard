@@ -1,0 +1,8 @@
+<header class="header">
+    <h1 class="headline">${currentPage.title}<small data-sly-test="${currentPage.properties.subtitle}"> ${currentPage.properties.subtitle}</small></h1>
+    <ul class="header-subnav" data-sly-list.child="${currentPage.listChildren}">
+        <li>
+            <a href="${child.path}.html">${child.title}</a>
+        </li>
+    </ul>
+</header>
