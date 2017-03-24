@@ -1,3 +1,7 @@
+_.isNotEmpty = function(object){
+    return ! _.isEmpty(object);
+};
+
 (function () {
     var DATA_EAEM_NESTED = "data-eaem-nested";
     var CFFW = ".coral-Form-fieldwrapper";
@@ -36,26 +40,33 @@
         $(document).on("dialog-ready", function() {
             var $multifield = $("[" + DATA_EAEM_NESTED + "]").first();
 
-            var actionUrl = $(".cq-dialog").attr("action") + ".infinity.json";
+            if (_.isNotEmpty($multifield)) {
 
-            $.ajax(actionUrl).done(function(data){
+                var childPrefix = $multifield['data-element-prefix'];
 
-                _.each(data, function(value, key){
-                    if (key.startsWith("item-")) {
+                var actionUrl = $(".cq-dialog").attr("action") + ".infinity.json";
 
-                        $multifield.find(".js-coral-Multifield-add").click();
+                $.ajax(actionUrl).done(function(data){
 
-                        _.each(data[key], function(fValue, fKey){
-                            if (fKey != "jcr:primaryType") {
-                               var $field = $multifield.find("[name='./" + fKey +"']").last();
-                               if(!_.isEmpty($field)) {
-                                   $field.val(fValue);
-                               }
-                            }
-                        });
-                    }
+                    _.each(data, function(value, key){
+                        if (key.startsWith(childPrefix)) {
+
+                            $multifield.find(".js-coral-Multifield-add").click();
+
+                            _.each(data[key], function(fValue, fKey){
+                                if (fKey != "jcr:primaryType") {
+                                    var $field = $multifield.find("[name='./" + fKey +"']").last();
+                                    if(!_.isEmpty($field)) {
+                                        $field.val(fValue);
+                                    }
+                                }
+                            });
+                        }
+                    });
                 });
-            });
+
+            }
+
         });
     }
 
@@ -64,46 +75,42 @@
         function fillValue($form, fieldSetName, $field, counter){
             var name = $field.attr("name");
 
-            if (!name) {
-                return;
+            if (name) {
+                //strip ./
+                if (name.indexOf("./") == 0) {
+                    name = name.substring(2);
+                }
+
+                //remove the field, so that individual values are not POSTed
+                $field.remove();
+
+                $('<input />').attr('type', 'hidden')
+                    .attr('name', fieldSetName + "/" + counter + "/" + name)
+                    .attr('value', $field.val())
+                    .appendTo($form);
             }
 
-            //strip ./
-            if (name.indexOf("./") == 0) {
-                name = name.substring(2);
-            }
-
-            //remove the field, so that individual values are not POSTed
-            $field.remove();
-
-            $('<input />').attr('type', 'hidden')
-                .attr('name', fieldSetName + "/" + counter + "/" + name)
-                .attr('value', $field.val())
-                .appendTo($form);
         }
 
         $(document).on("click", ".cq-dialog-submit", function () {
-            var $multifields = $("[" + DATA_EAEM_NESTED + "]");
+            var $multifield = $("[" + DATA_EAEM_NESTED + "]").first();
 
-            if(_.isEmpty($multifields)){
-                return;
-            }
+            if( _.isNotEmpty($multifield)){
+                var childPrefix = $multifield['data-element-prefix'];
+                var $form = $(this).closest("form.foundation-form");
+                var $fieldSets;
+                var $fields;
 
-            var $form = $(this).closest("form.foundation-form");
-            var $fieldSets;
-            var $fields;
-
-            $multifields.each(function(i, multifield){
-                $fieldSets = $(multifield).find("[class='coral-Form-fieldset']");
+                $fieldSets = $multifield.find("[class='coral-Form-fieldset']");
 
                 $fieldSets.each(function (counter, fieldSet) {
                     $fields = $(fieldSet).children().children(CFFW);
 
                     $fields.each(function (j, field) {
-                        fillValue($form, $(fieldSet).data("name"), $(field).find("[name]"), "item-" + (counter + 1));
+                        fillValue($form, $(fieldSet).data("name"), $(field).find("[name]"), childPrefix + (counter + 1));
                     });
                 });
-            });
+            }
         });
     }
 

@@ -18,7 +18,8 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/foundation/form/multifield"
                             class="full-width"
-                            eaem-nested="test this"
+                            eaem-nested=""
+                            element-prefix="item-"
                             fieldDescription="Click '+' to add a new column"
                             fieldLabel="Columns">
                         <field
@@ -36,19 +37,31 @@
                                     <items jcr:primaryType="nt:unstructured">
                                         <width
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                sling:resourceType="granite/ui/components/foundation/form/numberfield"
                                                 fieldDescription="Enter Width"
                                                 fieldLabel="Width"
                                                 name="./width"/>
                                         <mediaSize
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                sling:resourceType="granite/ui/components/foundation/form/select"
                                                 fieldDescription="Enter Media Size"
                                                 fieldLabel="Media Size"
-                                                name="./mediaSize"/>
+                                                name="./mediaSize">
+                                            <items jcr:primaryType="cq:WidgetCollection">
+                                                <large jcr:primaryType="nt:unstructured"
+                                                       text="large"
+                                                       value="large"/>
+                                                <medium jcr:primaryType="nt:unstructured"
+                                                       text="medium"
+                                                       value="medium"/>
+                                                <small jcr:primaryType="nt:unstructured"
+                                                        text="small"
+                                                        value="small"/>
+                                            </items>
+                                        </mediaSize>
                                         <offset
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                sling:resourceType="granite/ui/components/foundation/form/numberfield"
                                                 fieldDescription="Enter Offset"
                                                 fieldLabel="Offset"
                                                 name="./offset"/>
