@@ -9,40 +9,12 @@ _.isNotEmpty = function(object){
     //reads multifield data from server, creates the nested composite multifields and fills them
     function addDataInFields() {
 
-        function buildMultiField(data, $multifield, mName){
-            if(_.isEmpty(mName) || _.isEmpty(data)){
-                return;
-            }
-
-            _.each(data, function(value, key){
-                if(key == "jcr:primaryType"){
-                    return;
-                }
-
-                $multifield.find(".js-coral-Multifield-add").click();
-
-                _.each(value, function(fValue, fKey){
-                    if(fKey == "jcr:primaryType"){
-                        return;
-                    }
-
-                    var $field = $multifield.find("[name='./" + fKey + "']").last();
-
-                    if(_.isEmpty($field)){
-                        return;
-                    }
-
-                    $field.val(fValue);
-                });
-            });
-        }
-
         $(document).on("dialog-ready", function() {
             var $multifield = $("[" + DATA_EAEM_NESTED + "]").first();
 
             if (_.isNotEmpty($multifield)) {
 
-                var childPrefix = $multifield['data-element-prefix'];
+                var childPrefix = $multifield.attr('data-element-prefix');
 
                 var actionUrl = $(".cq-dialog").attr("action") + ".infinity.json";
 
@@ -96,7 +68,7 @@ _.isNotEmpty = function(object){
             var $multifield = $("[" + DATA_EAEM_NESTED + "]").first();
 
             if( _.isNotEmpty($multifield)){
-                var childPrefix = $multifield['data-element-prefix'];
+                var childPrefix = $multifield.attr('data-element-prefix');
                 var $form = $(this).closest("form.foundation-form");
                 var $fieldSets;
                 var $fields;

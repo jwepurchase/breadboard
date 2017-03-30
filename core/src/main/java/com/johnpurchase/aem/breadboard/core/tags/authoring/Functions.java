@@ -40,4 +40,15 @@ public class Functions {
     public static final Resource resourceAtPath(final String path, final ResourceResolver resolver) {
         return resolver.getResource(path);
     }
+
+    @Function
+    public static final String toString(final Object o) {
+        String result;
+        if(o != null) {
+            result = o.toString();
+        } else {
+            result = "";
+        }
+        return result;
+    }
 }

@@ -46,7 +46,7 @@
                         </Embed-Dependency>
                         -->
                         <Sling-Model-Packages>
-                            com.johnpurchase.aem.breadboard.core
+                            com.johnpurchase.aem.breadboard.core.models
                         </Sling-Model-Packages>
                         <Include-Resource>
                             {maven-resources},

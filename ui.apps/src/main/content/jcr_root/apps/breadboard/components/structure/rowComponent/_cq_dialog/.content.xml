@@ -3,7 +3,8 @@
           xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
           jcr:primaryType="nt:unstructured"
           jcr:title="Foundation Row Properties"
-          sling:resourceType="cq/gui/components/authoring/dialog">
+    sling:resourceType="breadboard/components/structure/rowComponent/dialog" >
+        <!--sling:resourceType="cq/gui/components/authoring/dialog" -->
     <content jcr:primaryType="nt:unstructured"
              sling:resourceType="granite/ui/components/foundation/container">
         <layout
@@ -19,7 +20,7 @@
                             sling:resourceType="granite/ui/components/foundation/form/multifield"
                             class="full-width"
                             eaem-nested=""
-                            element-prefix="item-"
+                            element-prefix="col-"
                             fieldDescription="Click '+' to add a new column"
                             fieldLabel="Columns">
                         <field
@@ -31,40 +32,82 @@
                                     sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
                                     method="absolute"/>
                             <items jcr:primaryType="nt:unstructured">
-                                <column
-                                        jcr:primaryType="nt:unstructured"
+                                <column jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/container">
                                     <items jcr:primaryType="nt:unstructured">
-                                        <width
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/form/numberfield"
-                                                fieldDescription="Enter Width"
-                                                fieldLabel="Width"
-                                                name="./width"/>
-                                        <mediaSize
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/form/select"
-                                                fieldDescription="Enter Media Size"
-                                                fieldLabel="Media Size"
-                                                name="./mediaSize">
+                                        <lrgOn jcr:primaryType="nt:unstructured"
+                                               sling:resourceType="granite/ui/components/foundation/form/select"
+                                               name="./lrgOn"
+                                               fieldLabel="Large">
                                             <items jcr:primaryType="cq:WidgetCollection">
-                                                <large jcr:primaryType="nt:unstructured"
-                                                       text="large"
-                                                       value="large"/>
-                                                <medium jcr:primaryType="nt:unstructured"
-                                                       text="medium"
-                                                       value="medium"/>
-                                                <small jcr:primaryType="nt:unstructured"
-                                                        text="small"
-                                                        value="small"/>
+                                                <on jcr:primaryType="nt:unstructured"
+                                                    text="Configured"
+                                                    value="on"/>
+                                                <off jcr:primaryType="nt:unstructured"
+                                                    text="Default"
+                                                    value="off"/>
                                             </items>
-                                        </mediaSize>
-                                        <offset
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/form/numberfield"
-                                                fieldDescription="Enter Offset"
-                                                fieldLabel="Offset"
-                                                name="./offset"/>
+                                        </lrgOn>
+                                        <lrgWidth jcr:primaryType="nt:unstructured"
+                                                  sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                                  name="./lrgWidth"
+                                                  fieldLabel="Large width"
+                                                  defaultValue="1"/>
+                                        <lrgOffset jcr:primaryType="nt:unstructured"
+                                                  sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                                  name="./lrgOffset"
+                                                  fieldLabel="Large offset"
+                                                   defaultValue="0"/>
+                                        <medOn jcr:primaryType="nt:unstructured"
+                                               sling:resourceType="granite/ui/components/foundation/form/select"
+                                               name="./medOn"
+                                               fieldLabel="Medium"
+                                               value="off"
+                                               defaultValue="off">
+                                            <items jcr:primaryType="cq:WidgetCollection">
+                                                <on jcr:primaryType="nt:unstructured"
+                                                    text="Configured"
+                                                    value="on"/>
+                                                <off jcr:primaryType="nt:unstructured"
+                                                    text="Default"
+                                                    value="off"/>
+                                            </items>
+                                        </medOn>
+                                        <medWidth jcr:primaryType="nt:unstructured"
+                                                  sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                                  name="./medWidth"
+                                                  fieldLabel="Medium width"
+                                                  defaultValue="1"/>
+                                        <medOffset jcr:primaryType="nt:unstructured"
+                                                   sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                                   name="./medOffset"
+                                                   fieldLabel="Medium offset"
+                                                   defaultValue="0"/>
+                                        <smlOn jcr:primaryType="nt:unstructured"
+                                               sling:resourceType="granite/ui/components/foundation/form/select"
+                                               name="./smlOn"
+                                               fieldLabel="Small"
+                                               value="off"
+                                               defaultValue="off">
+                                            <items jcr:primaryType="cq:WidgetCollection">
+                                                <on jcr:primaryType="nt:unstructured"
+                                                    text="Configured"
+                                                    value="on"/>
+                                                <off jcr:primaryType="nt:unstructured"
+                                                    text="Default"
+                                                    value="off"/>
+                                            </items>
+                                        </smlOn>
+                                        <smlWidth jcr:primaryType="nt:unstructured"
+                                                  sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                                  name="./smlWidth"
+                                                  fieldLabel="Small width"
+                                                  defaultValue="1"/>
+                                        <smlOffset jcr:primaryType="nt:unstructured"
+                                                   sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                                   name="./smlOffset"
+                                                   fieldLabel="Small offset"
+                                                   defaultValue="0"/>
                                     </items>
                                 </column>
                             </items>
