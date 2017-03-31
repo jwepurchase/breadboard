@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
           xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-          jcr:primaryType="nt:unstructured" >
+          jcr:primaryType="nt:unstructured">
     <col-1 jcr:primaryType="nt:unstructured"
            lrgOn="{Boolean}true"
            lrgWidth="{Long}12"
@@ -11,7 +11,8 @@
            medOffset="{Long}0"
            smlOn="{Boolean}false"
            smlWidth="{Long}0"
-           smlOffset="{Long}0">
+           smlOffset="{Long}0"
+           end="{Boolean}false">
         <par jcr:primaryType="nt:unstructured"
              sling:resourceType="foundation/components/parsys"/>
     </col-1>

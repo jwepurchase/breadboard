@@ -41,6 +41,9 @@ public class FoundationColumnModel {
     @Inject
     private Long smlOffset;
 
+    @Inject
+    private Boolean end;
+
     private String htmlClass;
 
     @PostConstruct
@@ -60,6 +63,10 @@ public class FoundationColumnModel {
         if (smlOn) {
             if (smlWidth != null && smlWidth > 0) buffer.append(" small-").append(smlWidth);
             if (smlOffset != null && smlOffset > 0) buffer.append(" small-offset-").append(smlOffset);
+        }
+
+        if (end) {
+           buffer.append(" end");
         }
 
         htmlClass=buffer.toString();

@@ -69,7 +69,8 @@
                                     medOffset: 0,
                                     smlOn: false,
                                     smlWidth: 0,
-                                    smlOffset: 0
+                                    smlOffset: 0,
+                                    end: false
                                 },
                                 name: 'col-'+new String(columns.length + 1),
                                 active: false

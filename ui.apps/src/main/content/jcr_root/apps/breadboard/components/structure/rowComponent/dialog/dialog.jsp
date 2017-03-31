@@ -53,6 +53,7 @@
                                 <crl:numberfield label="Width" property="column.data.smlWidth"/>
                                 <crl:numberfield label="Offset" property="column.data.smlOffset"/>
                             </template>
+                            <crl:checkbox label="End row" property="column.data.end"/>
                         </crl:fieldset>
                     </section>
                 </div>
