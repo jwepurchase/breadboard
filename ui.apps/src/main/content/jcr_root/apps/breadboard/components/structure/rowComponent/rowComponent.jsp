@@ -11,9 +11,8 @@
 </auth:wcmMode>
 
 <div class="row">
-    <auth:children resource="${resource}" var="col">
-        <c:set var="colProps" value="${sling:adaptTo(col, 'com.johnpurchase.aem.breadboard.core.models.FoundationColumnModel')}"/>
-        <div class="${colProps.htmlClass}">
+    <auth:children resource="${resource}" var="col" adaptTo="com.johnpurchase.aem.breadboard.core.models.FoundationColumnModel">
+        <div class="${col.htmlClass}">
             <cq:include path="${col.path}/par" resourceType="foundation/components/parsys"/>
         </div>
     </auth:children>

@@ -4,6 +4,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Model;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -13,6 +15,9 @@ import javax.inject.Inject;
  */
 @Model(adaptables = {Resource.class, ValueMap.class})
 public class FoundationColumnModel {
+
+    private final Logger log = LoggerFactory.getLogger(getClass());
+    private final Resource resource;
 
     @Inject
     private Boolean lrgOn;
@@ -46,6 +51,10 @@ public class FoundationColumnModel {
 
     private String htmlClass;
 
+    public FoundationColumnModel(Resource resource) {
+        this.resource = resource;
+    }
+
     @PostConstruct
     private void init() {
         StringBuffer buffer = new StringBuffer("columns");
@@ -74,5 +83,9 @@ public class FoundationColumnModel {
 
     public final String getHtmlClass() {
         return htmlClass;
+    }
+
+    public final String getPath() {
+        return resource.getPath();
     }
 }

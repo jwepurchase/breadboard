@@ -1,6 +1,7 @@
 package com.johnpurchase.aem.breadboard.core.tags.authoring;
 
 import com.johnpurchase.aem.breadboard.core.tags.SlingTag;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import tldgen.BodyContentType;
 import tldgen.Tag;
@@ -19,6 +20,7 @@ public class ChildrenTag extends SlingTag{
     private Resource resource;
     private String var = "child";
     private String varStatus = "status";
+    private String adaptTo;
 
     @Override
     public void doTag() throws JspException, IOException {
@@ -27,7 +29,17 @@ public class ChildrenTag extends SlingTag{
         Iterator<Resource> iter = resource.listChildren();
         while(iter.hasNext()) {
             Resource child = iter.next();
-            getPageContext().setAttribute(var, child);
+            Object adapted;
+            try {
+                if (child == null || StringUtils.isEmpty(adaptTo)) {
+                    adapted = child;
+                } else {
+                    adapted = child.adaptTo(Class.forName(adaptTo));
+                }
+            } catch (ClassNotFoundException e) {
+                adapted = child;
+            }
+            getPageContext().setAttribute(var, adapted);
 
             if(! iter.hasNext()) {
                 loopStatus.last = true;
@@ -55,6 +67,11 @@ public class ChildrenTag extends SlingTag{
     @TagAttribute(required = false)
     public final void setVarStatus(String varStatus) {
         this.varStatus = varStatus;
+    }
+
+    @TagAttribute(required = false)
+    public final void setAdaptTo(String adaptTo) {
+        this.adaptTo = adaptTo;
     }
 
     public final class LoopStatus {
