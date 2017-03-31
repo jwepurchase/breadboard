@@ -15,16 +15,25 @@ import javax.inject.Inject;
 public class FoundationColumnModel {
 
     @Inject
+    private Boolean lrgOn;
+
+    @Inject
     private Long lrgWidth;
 
     @Inject
     private Long lrgOffset;
 
     @Inject
+    private Boolean medOn;
+
+    @Inject
     private Long medWidth;
 
     @Inject
     private Long medOffset;
+
+    @Inject
+    private Boolean smlOn;
 
     @Inject
     private Long smlWidth;
@@ -38,14 +47,20 @@ public class FoundationColumnModel {
     private void init() {
         StringBuffer buffer = new StringBuffer("columns");
 
-        if (lrgWidth != null && lrgWidth > 0) buffer.append(" large-").append(lrgWidth);
-        if (lrgOffset != null && lrgOffset > 0) buffer.append(" large-offset-").append(lrgOffset);
+        if (lrgOn) {
+            if (lrgWidth != null && lrgWidth > 0) buffer.append(" large-").append(lrgWidth);
+            if (lrgOffset != null && lrgOffset > 0) buffer.append(" large-offset-").append(lrgOffset);
+        }
 
-        if (medWidth != null && medWidth > 0) buffer.append(" medium-").append(medWidth);
-        if (medOffset != null && medOffset > 0) buffer.append(" medium-offset-").append(medOffset);
+        if (medOn) {
+            if (medWidth != null && medWidth > 0) buffer.append(" medium-").append(medWidth);
+            if (medOffset != null && medOffset > 0) buffer.append(" medium-offset-").append(medOffset);
+        }
 
-        if (smlWidth != null && smlWidth > 0) buffer.append(" small-").append(smlWidth);
-        if (smlOffset != null && smlOffset > 0) buffer.append(" small-offset-").append(smlOffset);
+        if (smlOn) {
+            if (smlWidth != null && smlWidth > 0) buffer.append(" small-").append(smlWidth);
+            if (smlOffset != null && smlOffset > 0) buffer.append(" small-offset-").append(smlOffset);
+        }
 
         htmlClass=buffer.toString();
     }

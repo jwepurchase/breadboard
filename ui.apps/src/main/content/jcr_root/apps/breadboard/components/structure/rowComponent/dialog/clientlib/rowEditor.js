@@ -61,10 +61,13 @@
                             var newColumn = {
                                 data: {
                                     'jcr:primaryType': 'nt:unstructured',
+                                    lrgOn: true,
                                     lrgWidth: 0,
                                     lrgOffset: 0,
+                                    medOn: false,
                                     medWidth: 0,
                                     medOffset: 0,
+                                    smlOn: false,
                                     smlWidth: 0,
                                     smlOffset: 0
                                 },

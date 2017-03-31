@@ -10,27 +10,15 @@
 <head>
 </head>
 <body class="coral--light">
-<form id="rowDlg"
-      v-on:submit="saveDialog"
-      data-component-path="${slingRequest.requestPathInfo.suffix}"
-      class="coral-Form coral-Text cq-dialog foundation-form content foundation-layout-form cq-dialog-floating coral-Form--aligned coral--dark">
-    <nav class="cq-dialog-header u-coral-clearFix cq-dialog-dragging">
-        <h2 class="coral-Heading coral-Heading--2 u-coral-pullLeft">Foundation Row Editor</h2>
-        <div class="cq-dialog-actions u-coral-pullRight">
-            <button type="button" class="coral-MinimalButton cq-dialog-header-action cq-dialog-cancel" title="Cancel">
-                <i class="coral-Icon coral-Icon--close"></i>
-            </button>
-            <button class="coral-MinimalButton cq-dialog-header-action cq-dialog-submit" title="Done">
-                <i class="coral-Icon coral-Icon--check"></i>
-            </button>
-        </div>
-    </nav>
+<crl:dialogform label="Foundation Row Editor"
+                componentPath="${slingRequest.requestPathInfo.suffix}"
+                submitMethod="saveDialog">
     <div class="cq-dialog-content coral-FixedColumn foundation-layout-util-vmargin">
         <div class="coral-FixedColumn-column" >
             <div class="u-coral-clearFix">
                 <button type="button" class="coral-Button u-coral-pullRight" v-on:click="addColumn()">Add Column</button>
             </div>
-            <div class="coral-TabPanal" data-init="tabs">
+            <div class="coral-TabPanel" data-init="tabs">
                 <nav class="coral-TabPanel-navigation">
                     <a data-toggle="tab"
                        href="#"
@@ -46,33 +34,37 @@
                              v-for="column in columns"
                              role="tabpanel">
                         <crl:fieldset label="Large Media Config">
-                            <crl:numberfield label="Width" dataRef="column.data.lrgWidth"/>
-                            <crl:numberfield label="Offset" dataRef="column.data.lrgOffset"/>
+                            <crl:checkbox label="Use Large Config" property="column.data.lrgOn"/>
+                            <template v-if="column.data.lrgOn">
+                                <crl:numberfield label="Width" property="column.data.lrgWidth"/>
+                                <crl:numberfield label="Offset" property="column.data.lrgOffset"/>
+                            </template>
                         </crl:fieldset>
                         <crl:fieldset label="Medium Media Config">
-                            <crl:numberfield label="Width" dataRef="column.data.medWidth"/>
-                            <crl:numberfield label="Offset" dataRef="column.data.medOffset"/>
+                            <crl:checkbox label="Use Medium Config" property="column.data.medOn"/>
+                            <template v-if="column.data.medOn">
+                                <crl:numberfield label="Width" property="column.data.medWidth"/>
+                                <crl:numberfield label="Offset" property="column.data.medOffset"/>
+                            </template>
                         </crl:fieldset>
                         <crl:fieldset label="Small Media Config">
-                            <crl:numberfield label="Width" dataRef="column.data.smlWidth"/>
-                            <crl:numberfield label="Offset" dataRef="column.data.smlOffset"/>
+                            <crl:checkbox label="Use Small Config" property="column.data.smlOn"/>
+                            <template v-if="column.data.smlOn">
+                                <crl:numberfield label="Width" property="column.data.smlWidth"/>
+                                <crl:numberfield label="Offset" property="column.data.smlOffset"/>
+                            </template>
                         </crl:fieldset>
                     </section>
                 </div>
             </div>
 
-            <%--
-            <section class="u-columnMedium">
-                <h4 class="coral-Heading coral-Heading--4">JSON</h4>
-                <div class="coral-Well">
-                    {{ JSON.stringify(raw) }}
-                </div>
-            </section>
-            --%>
+            <crl:well label="JSON">
+                {{ JSON.stringify(raw) }}
+            </crl:well>
 
         </div>
     </div>
-</form>
+</crl:dialogform>
 </body>
 </html>
 
