@@ -49,6 +49,15 @@ public class FoundationColumnModel {
     @Inject
     private Boolean end;
 
+    @Inject
+    private String lrgCentered;
+
+    @Inject
+    private String medCentered;
+
+    @Inject
+    private String smlCentered;
+
     private String htmlClass;
 
     public FoundationColumnModel(Resource resource) {
@@ -72,6 +81,18 @@ public class FoundationColumnModel {
         if (smlOn) {
             if (smlWidth != null && smlWidth > 0) buffer.append(" small-").append(smlWidth);
             if (smlOffset != null && smlOffset > 0) buffer.append(" small-offset-").append(smlOffset);
+        }
+
+        if(StringUtils.isNotEmpty(lrgCentered) && !"default".equals(lrgCentered)) {
+            buffer.append( " large-").append(lrgCentered);
+        }
+
+        if(StringUtils.isNotEmpty(medCentered) && !"default".equals(medCentered)) {
+            buffer.append( " medium-").append(medCentered);
+        }
+
+        if(StringUtils.isNotEmpty(smlCentered) && !"default".equals(smlCentered)) {
+            buffer.append( " small-").append(smlCentered);
         }
 
         if (end) {

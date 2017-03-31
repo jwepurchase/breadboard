@@ -25,6 +25,14 @@
                     <template v-if="column.data.lrgOn">
                         <crl:numberfield label="Width" property="column.data.lrgWidth"/>
                         <crl:numberfield label="Offset" property="column.data.lrgOffset"/>
+                        <crl:fieldset label="Centered">
+                            <crl:radiogroup property="column.data.lrgCentered"
+                                            controlName="lrgCentered">
+                                <crl:radiobutton value="default">Unspecified</crl:radiobutton>
+                                <crl:radiobutton value="centered">Centred</crl:radiobutton>
+                                <crl:radiobutton value="uncentered">Uncentred</crl:radiobutton>
+                            </crl:radiogroup>
+                        </crl:fieldset>
                     </template>
                 </crl:fieldset>
                 <crl:fieldset label="Medium Media Config">
@@ -32,6 +40,14 @@
                     <template v-if="column.data.medOn">
                         <crl:numberfield label="Width" property="column.data.medWidth"/>
                         <crl:numberfield label="Offset" property="column.data.medOffset"/>
+                        <crl:fieldset label="Centered">
+                            <crl:radiogroup property="column.data.medCentered"
+                                            controlName="medCentered">
+                                <crl:radiobutton value="default">Unspecified</crl:radiobutton>
+                                <crl:radiobutton value="centered">Centred</crl:radiobutton>
+                                <crl:radiobutton value="uncentered">Uncentred</crl:radiobutton>
+                            </crl:radiogroup>
+                        </crl:fieldset>
                     </template>
                 </crl:fieldset>
                 <crl:fieldset label="Small Media Config">
@@ -39,6 +55,14 @@
                     <template v-if="column.data.smlOn">
                         <crl:numberfield label="Width" property="column.data.smlWidth"/>
                         <crl:numberfield label="Offset" property="column.data.smlOffset"/>
+                        <crl:fieldset label="Centered">
+                            <crl:radiogroup property="column.data.smlCentered"
+                                            controlName="smlCentered">
+                                <crl:radiobutton value="default">Unspecified</crl:radiobutton>
+                                <crl:radiobutton value="centered">Centred</crl:radiobutton>
+                                <crl:radiobutton value="uncentered">Uncentred</crl:radiobutton>
+                            </crl:radiogroup>
+                        </crl:fieldset>
                     </template>
                     <crl:checkbox label="End row" property="column.data.end"/>
                 </crl:fieldset>

@@ -70,7 +70,10 @@
                                     smlOn: false,
                                     smlWidth: 0,
                                     smlOffset: 0,
-                                    end: false
+                                    end: false,
+                                    lrgCentered:'default',
+                                    medCentered:'default',
+                                    smlCentered:'default'
                                 },
                                 name: 'col-'+new String(columns.length + 1),
                                 active: false

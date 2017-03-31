@@ -15,6 +15,9 @@
            smlOn="{Boolean}false"
            smlWidth="{Long}0"
            smlOffset="{Long}0"
+           lrgCentered="default"
+           medCentered="default"
+           smlCentered="default"
            end="{Boolean}false">
         <par jcr:primaryType="nt:unstructured"
              sling:resourceType="foundation/components/parsys"/>
