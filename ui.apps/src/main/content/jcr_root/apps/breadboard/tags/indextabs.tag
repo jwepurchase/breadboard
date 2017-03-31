@@ -22,7 +22,7 @@
     <div class="coral-TabPanel-content">
         <section v-bind:id="${item} + '-tab-' + String(index)"
                  v-bind:class="{'coral-TabPanel-pane': true, 'is-active': ${item}.${activeFlag}}"
-                 v-for="column in columns"
+                 v-for="(${item}, index) in ${items}"
                  role="tabpanel">
             <jsp:doBody/>
         </section>

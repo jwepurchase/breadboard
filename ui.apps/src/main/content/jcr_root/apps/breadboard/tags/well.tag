@@ -2,7 +2,7 @@
 <%@ attribute name="label" required="true" rtexprvalue="true" type="java.lang.String"%>
 
 <section class="u-columnMedium">
-    <h4 class="coral-Heading coral-Heading--4">${label}</h4>
+    <h3 class="coral-Heading coral-Heading--3">${label}</h3>
     <div class="coral-Well">
         <jsp:doBody/>
     </div>

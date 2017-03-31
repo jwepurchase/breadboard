@@ -13,7 +13,7 @@ import javax.inject.Inject;
 /**
  * Created by john on 3/30/17.
  */
-@Model(adaptables = {Resource.class, ValueMap.class})
+@Model(adaptables = Resource.class)
 public class FoundationColumnModel {
 
     private final Logger log = LoggerFactory.getLogger(getClass());

@@ -10,7 +10,8 @@
     <div  class="cq-placeholder" data-emptytext="Foundation Row"> </div>
 </auth:wcmMode>
 
-<div class="row">
+<c:set var="rowModel" value="${sling:adaptTo(resource, 'com.johnpurchase.aem.breadboard.core.models.FoundationRowModel')}"/>
+<div class="${rowModel.htmlClass}">
     <auth:children resource="${resource}" var="col" adaptTo="com.johnpurchase.aem.breadboard.core.models.FoundationColumnModel">
         <div class="${col.htmlClass}">
             <cq:include path="${col.path}/par" resourceType="foundation/components/parsys"/>
