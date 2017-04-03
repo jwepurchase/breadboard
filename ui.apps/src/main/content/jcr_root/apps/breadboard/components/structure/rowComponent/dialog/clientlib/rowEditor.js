@@ -39,7 +39,7 @@
                             }
                         },
                         saveDialog: function(event) {
-                            //event.preventDefault();
+                            event.preventDefault();
 
                             $.ajax({
                                 type: "POST",
@@ -55,6 +55,7 @@
                             })
                                 .done(function(msg){
                                     console.log("data saved");
+                                    $('.cq-dialog-cancel').click();
                                 });
                         },
                         addColumn: function() {
@@ -73,7 +74,13 @@
                                     end: false,
                                     lrgCentered:'default',
                                     medCentered:'default',
-                                    smlCentered:'default'
+                                    smlCentered:'default',
+                                    lrgOrdering: 'none',
+                                    lrgOrderingAmount: 0,
+                                    medOrdering: 'none',
+                                    medOrderingAmount: 0,
+                                    smlOrdering: 'none',
+                                    smlOrderingAmount: 0
                                 },
                                 name: 'col-'+new String(columns.length + 1),
                                 active: false
@@ -86,10 +93,17 @@
                     }
                 });
 
+                $document.vueDialog = dlg;
+
 
             });
 
 
+    });
+
+    $(document).on("click", ".cq-dialog-submit", function(event){
+        console.log("submit event - vue access? " + ($document.vueDialog != undefined));
 
     });
+
 }) ($, $(document));

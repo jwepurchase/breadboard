@@ -18,6 +18,12 @@
            lrgCentered="default"
            medCentered="default"
            smlCentered="default"
+           lrgOrdering="none"
+           lrgOrderingAmount="{Long}0"
+           medOrdering="none"
+           medOrderingAmount="{Long}0"
+           smlOrdering="none"
+           smlOrderingAmount="{Long}0"
            end="{Boolean}false">
         <par jcr:primaryType="nt:unstructured"
              sling:resourceType="foundation/components/parsys"/>
